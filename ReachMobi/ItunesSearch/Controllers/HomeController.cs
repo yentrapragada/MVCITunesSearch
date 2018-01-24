@@ -10,7 +10,7 @@ namespace ItunesSearch.Controllers
     {
         public ActionResult Index()
         {
-            //Taking Top 10 Search terms with maximum counts
+            
             ViewBag.SearchCounts = new DataAccess.ItunesSearchDBEntities().SearchCounts.OrderByDescending(a => a.Count).Take(25).ToList();
             return View();
         }
